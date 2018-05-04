@@ -24,17 +24,16 @@ $(document).ready(function() {
             queryArray = json["query"]["search"];
 
             for (var i = 0; i < queryArray.length; ++i) {
-                createArticleDiv(queryArray[i]["title"], queryArray[i]["snippet"]);
+                createArticleDiv(queryArray[i]["title"], queryArray[i]["snippet"], queryArray[i]["pageid"]);
             }
-            //createArticleDiv(json["query"]["search"][0]["title"], json["query"]["search"][0]["snippet"]);
         }
 
     });
 
 });
 
-function createArticleDiv(title, snippet) {
-    var div = "<div class='article'>" + title + "<p>" + snippet + "</p></div>";
+function createArticleDiv(title, snippet, pageid) {
+    var div = "<div class='article'><strong>" + title + "</strong><p><a href='https://en.wikipedia.org/wiki/Translation?curid='" + pageid + " target='_blank'>" + snippet + "</a></p></div>";
 
     $("#content").append(div);
 }
