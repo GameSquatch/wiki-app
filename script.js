@@ -24,7 +24,7 @@ $(document).ready(function() {
 function createArticleDiv(title, snippet, pageid) {
     var div = "<div class='row'>"
                 + "<div class='col-3'></div>"
-                + "<div class='col-6'><strong>" + title
+                + "<div class='col-6 linkBox'><strong>" + title
                 + "</strong><p><a href='https://en.wikipedia.org/?curid="
                 + pageid + "' target='_blank'>" + snippet + "</a></p></div>"
                 + "<div class='col-3'></div>";
@@ -34,12 +34,12 @@ function createArticleDiv(title, snippet, pageid) {
 
 function search() {
     var textField = textSearch.val();
-    wurl += textField;
-    console.log(wurl);
+    //wurl += textField;
+    console.log(wurl + textField);
 
     $.ajax({
         dataType: "jsonp",
-        url: wurl,
+        url: wurl + textField,
         success: function(json) {
             //content.html(JSON.stringify(json));
             queryArray = json["query"]["search"];
