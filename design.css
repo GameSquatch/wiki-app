@@ -3,3 +3,11 @@
     margin: 10px 0;
     padding: 5px;
 }
+
+#textSearch {
+    width: 250px;
+    transition: width 0.4s ease-out;
+}
+#textSearch:focus {
+    width: 400px;
+}
