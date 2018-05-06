@@ -19,18 +19,24 @@ $(document).ready(function() {
 
     content = $("#content");
     textSearch = $("#textSearch");
+    textSearch.keypress(function(event) {
+        if (event.which == 13 && textSearch.is(':focus') && textSearch.val() !== '') {
+            search();
+            return false;
+        }
+    });
 
 });
 
 function createArticleDiv(title, snippet, pageid) {
-    var div = "<div class='row article'>"
-                + "<div class='col-3'></div>"
-                + "<div class='col-6 linkBox'><strong>" + title
-                + "</strong><p><a href='https://en.wikipedia.org/?curid="
-                + pageid + "' target='_blank'>" + snippet + "</a></p></div>"
-                + "<div class='col-3'></div>";
 
-    $("#content").append(div);
+
+    var div = "<div class='linkBox'><strong>" + title
+
+                + "</strong><p><a href='https://en.wikipedia.org/?curid="
+                + pageid + "' target='_blank'>" + snippet + "</a></p></div>";
+
+    content.append(div);
 }
 
 function search() {
@@ -46,13 +52,9 @@ function search() {
             //grabbing the piece of the json obj that has search content in it
             queryArray = json["query"]["search"];
 
-            //this checks if the dom is already populated by a search and removes them
-            //like a refresh of the page when you search again
-            if ($(".article").length) {
-                $(".article").remove();
-            }
 
-            //create dom elements for the search results and append them
+            $('.linkBox').remove();
+
             for (var i = 0; i < queryArray.length; ++i) {
                 createArticleDiv(queryArray[i]["title"]
                                 , queryArray[i]["snippet"]
@@ -62,3 +64,4 @@ function search() {
 
     });
 }
+
