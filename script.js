@@ -18,6 +18,12 @@ $(document).ready(function() {
 
     content = $("#content");
     textSearch = $("#textSearch");
+    textSearch.keypress(function(event) {
+        if (event.which == 13 && textSearch.is(':focus') && textSearch.val() !== '') {
+            search();
+            return false;
+        }
+    });
 
 });
 
@@ -53,3 +59,4 @@ function search() {
 
     });
 }
+
