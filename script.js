@@ -28,14 +28,11 @@ $(document).ready(function() {
 });
 
 function createArticleDiv(title, snippet, pageid) {
-    var div = "<div class='row'>"
-                + "<div class='col-3'></div>"
-                + "<div class='col-6 linkBox'><strong>" + title
+    var div = "<div class='linkBox'><strong>" + title
                 + "</strong><p><a href='https://en.wikipedia.org/?curid="
-                + pageid + "' target='_blank'>" + snippet + "</a></p></div>"
-                + "<div class='col-3'></div>";
+                + pageid + "' target='_blank'>" + snippet + "</a></p></div>";
 
-    $("#content").append(div);
+    content.append(div);
 }
 
 function search() {
@@ -49,6 +46,8 @@ function search() {
         success: function(json) {
             //content.html(JSON.stringify(json));
             queryArray = json["query"]["search"];
+
+            $('.linkBox').remove();
 
             for (var i = 0; i < queryArray.length; ++i) {
                 createArticleDiv(queryArray[i]["title"]
