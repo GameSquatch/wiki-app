@@ -28,9 +28,9 @@ $(document).ready(function() {
 });
 
 function createArticleDiv(title, snippet, pageid) {
-    var div = "<div class='linkBox'><strong>" + title
-                + "</strong><p><a href='https://en.wikipedia.org/?curid="
-                + pageid + "' target='_blank'>" + snippet + "</a></p></div>";
+    var div = "<a target='_blank' href='https://en.wikipedia.org/?curid="
+                + pageid + "'><div class='linkBox'><strong>" + title
+                + "</strong><p>" + snippet + "</p></div></a>";
 
     content.append(div);
 }
