@@ -53,8 +53,10 @@ function search() {
             queryArray = json["query"]["search"];
 
 
+            //removes previous search's content
             $('.linkBox').remove();
 
+            //for every item in wiki query array, create a div to display on the screen
             for (var i = 0; i < queryArray.length; ++i) {
                 createArticleDiv(queryArray[i]["title"]
                                 , queryArray[i]["snippet"]
