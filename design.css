@@ -22,6 +22,9 @@ body {
     color: white;
     padding: 8px;
 }
+.found {
+    color: #ff7d05;
+}
 .title {
     padding: 8px 8px 8px 0;
     font-size: 16pt;

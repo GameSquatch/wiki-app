@@ -29,7 +29,9 @@ $(document).ready(function() {
 
 });
 
-function createArticleDiv(title, snippet, pageid) {
+function createArticleDiv(searchText, title, snippet, pageid) {
+    var re = new RegExp(searchText, "gi");
+    snippet = snippet.replace(re, "<span class='found'>" + searchText + "</span>");
     var div = "<a target='_blank' href='https://en.wikipedia.org/?curid="
                 + pageid + "'><div class='linkBox'><strong><span class='title'>" + title
                 + "</span></strong><p class='snipp'>" + snippet + "</p></div></a>";
@@ -54,7 +56,7 @@ function search() {
 
             //for every item in wiki query array, create a div to display on the screen
             for (var i = 0; i < queryArray.length; ++i) {
-                createArticleDiv(queryArray[i]["title"]
+                createArticleDiv(textField, queryArray[i]["title"]
                                 , queryArray[i]["snippet"]
                                 , queryArray[i]["pageid"]);
             }
