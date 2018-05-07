@@ -1,5 +1,23 @@
+body {
+    position: relative;
+}
+
+#content-container {
+    position: absolute;
+    top: 250px;
+    transition: all 0.5s ease-out;
+}
+
 .linkBox {
     border: 1px solid black;
     margin: 10px 0;
     padding: 5px;
+}
+
+a {
+    color: black;
+}
+a:hover {
+    text-decoration: none;
+    color: black;
 }
