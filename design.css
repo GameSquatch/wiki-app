@@ -1,17 +1,31 @@
 body {
     position: relative;
+    background-color: #333;
 }
 
 #content-container {
     position: absolute;
-    top: 250px;
+    top: 10px;
+    left: 70px;
     transition: all 0.5s ease-out;
 }
 
 .linkBox {
-    border: 1px solid black;
-    margin: 10px 0;
+    background-color: #3f3f3f;
+    border: 2px solid white;
+    margin: 20px 0;
     padding: 5px;
+    box-shadow: 2px 2px 5px 0 #ff7d05,
+                -2px -2px 5px 0 #ff7d05;
+}
+.snipp {
+    color: white;
+    padding: 8px;
+}
+.title {
+    padding: 8px 8px 8px 0;
+    font-size: 16pt;
+    color: #ff7d05;
 }
 
 a {
@@ -20,4 +34,8 @@ a {
 a:hover {
     text-decoration: none;
     color: black;
+}
+button.btn {
+    background-color: #ff7d05;
+    color: white;
 }

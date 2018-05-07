@@ -26,19 +26,13 @@ $(document).ready(function() {
             return false;
         }
     });
-    textSearch.focus(function() {
-        contentContainer.css("top", "8px");
-        console.log("focused");
-    });
-
-    //contentContainer.css("top", "250px");
 
 });
 
 function createArticleDiv(title, snippet, pageid) {
     var div = "<a target='_blank' href='https://en.wikipedia.org/?curid="
-                + pageid + "'><div class='linkBox'><strong>" + title
-                + "</strong><p>" + snippet + "</p></div></a>";
+                + pageid + "'><div class='linkBox'><strong><span class='title'>" + title
+                + "</span></strong><p class='snipp'>" + snippet + "</p></div></a>";
 
     content.append(div);
 }
