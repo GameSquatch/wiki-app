@@ -8,6 +8,7 @@
 //I think that should work
 
 var content;
+var contentContainer;
 var textSearch;
 var queryArray;
 var searchWord = "butterfly";
@@ -17,6 +18,7 @@ var wurl = "https://en.wikipedia.org/w/api.php"
 $(document).ready(function() {
 
     content = $("#content");
+    contentContainer = $("#content");
     textSearch = $("#textSearch");
     textSearch.keypress(function(event) {
         if (event.which == 13 && textSearch.is(':focus') && textSearch.val() !== '') {
@@ -24,6 +26,12 @@ $(document).ready(function() {
             return false;
         }
     });
+    textSearch.focus(function() {
+        contentContainer.css("top", "8px");
+        console.log("focused");
+    });
+
+    //contentContainer.css("top", "250px");
 
 });
 
