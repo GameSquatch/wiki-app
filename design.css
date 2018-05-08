@@ -4,10 +4,7 @@ body {
 }
 
 #content-container {
-    position: absolute;
-    z-index: 2;
-    top: 10px;
-    left: 70px;
+    padding: 5px;
 }
 
 .linkBox {
