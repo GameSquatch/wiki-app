@@ -11,7 +11,6 @@ var content;
 var contentContainer;
 var textSearch;
 var queryArray;
-var searchWord = "butterfly";
 var wurl = "https://en.wikipedia.org/w/api.php"
             + "?action=query&format=json&list=search&srsearch=";
 
@@ -21,9 +20,9 @@ $(document).ready(function() {
     contentContainer = $("#content");
     textSearch = $("#textSearch");
     textSearch.keypress(function(event) {
-        if (event.which == 13 && textSearch.is(':focus') && textSearch.val() !== '') {
+        if (event.which == 13 && textSearch.val() !== '') {
             search();
-            return false;
+            //return false;
         }
     });
 

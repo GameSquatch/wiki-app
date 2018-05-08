@@ -5,9 +5,9 @@ body {
 
 #content-container {
     position: absolute;
+    z-index: 2;
     top: 10px;
     left: 70px;
-    transition: all 0.5s ease-out;
 }
 
 .linkBox {
